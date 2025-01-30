@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /tmp/deployment # Place files temporarily
+
+hooks:
+  AfterInstall:
+    - location: extract-and-move.sh
+      timeout: 300
+      runas: ubuntu
+    - location: restart-lamp.sh
+      timeout: 300
+      runas: ubuntu
+
