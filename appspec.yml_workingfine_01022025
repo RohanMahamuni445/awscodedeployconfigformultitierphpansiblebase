@@ -8,8 +8,6 @@ hooks:
   AfterInstall:
     - location: extract-and-move.sh
       timeout: 300
-    - location: importdb.sh
-      timeout: 300
       runas: root
     - location: restart-lamp.sh
       timeout: 300
